@@ -17,13 +17,5 @@ namespace BackCountryFreedom.Models
         [Required]
         [StringLength(255)]
         public string Province { get; set; }
-
-        public virtual ICollection<Event> Events { get; set; }
-
-    }
-    public abstract class EntityBase
-    {
-        [Required, DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime CreatedUtc { get; set; }
     }
 }

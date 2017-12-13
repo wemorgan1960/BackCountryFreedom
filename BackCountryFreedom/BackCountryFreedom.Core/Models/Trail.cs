@@ -19,16 +19,7 @@ namespace BackCountryFreedom.Models
 
         public float Distance { get; set; }
 
-        public int DistanceScaleId { get; set; }
-
-        public virtual DistanceScale DistanceScale { get; set; }
-
         public float Elevation { get; set; }
-
-        public int ElevationScaleId { get; set; }
-
-        public virtual ElevationScale ElevationScale { get; set; }
-
 
         [RegularExpression(@"^(\+|-)?(?:180(?:(?:\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,6})?))$", ErrorMessage = "Decmial Format 15.12345")]
         [Display(Name = "Latitude")]
@@ -42,8 +33,5 @@ namespace BackCountryFreedom.Models
         [DisplayFormat(DataFormatString = "{0:0.00000}")]
         public decimal? Long { get; set; }
 
-        public int LocationId { get; set; }
-
-        public virtual Location Location { get; set; }
     }
 }

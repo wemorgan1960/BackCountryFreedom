@@ -23,20 +23,5 @@ namespace BackCountryFreedom.Models
 
         [Range(1, 10)]
         public int Rating { get; set; }
-
-        public int SeasonId { get; set; }
-
-        public virtual Season Season { get; set; }
-
-        public int EventId { get; set; }
-
-        public virtual Event Event { get; set; }
-
-        public int DifficultyId { get; set; }
-        public virtual Difficulty Difficulty { get; set; }
-
-        public int EventTypeId { get; set; }
-        public virtual EventType EventType { get; set; }
-
     }
 }

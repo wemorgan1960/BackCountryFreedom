@@ -196,6 +196,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TrailManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -277,11 +278,30 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\TrailManager\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BackCountryFreedom.Core\BackCountryFreedom.Core.csproj">
+      <Project>{33010de1-22a4-4eb9-9a46-08b6c68f8a10}</Project>
+      <Name>BackCountryFreedom.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackCountryFreedom.DataAccess.InMemory\BackCountryFreedom.DataAccess.InMemory.csproj">
+      <Project>{bb4f1a11-266d-42c1-b0ea-84a136f6d861}</Project>
+      <Name>BackCountryFreedom.DataAccess.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackCountryFreedom.DataAccess.SQL\BackCountryFreedom.DataAccess.SQL.csproj">
+      <Project>{302f574f-62ac-473b-919d-1b1f14ee1cbe}</Project>
+      <Name>BackCountryFreedom.DataAccess.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackCountryFreedom.Services\BackCountryFreedom.Services.csproj">
+      <Project>{19d1ba9b-ccbd-4948-baa1-81e8f3df51f2}</Project>
+      <Name>BackCountryFreedom.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
