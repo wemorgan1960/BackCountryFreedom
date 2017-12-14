@@ -8,11 +8,11 @@ using BackCountryFreedom.Core.Models;
 
 namespace BackCountryFreedom.WebUI.Controllers
 {
-    public class ActvityTypeController : Controller
+    public class ActivityTypeController : Controller
     {
         IRepository<ActivityType> context;
 
-        public ActvityTypeController(IRepository<ActivityType> actvitytypecontext)
+        public ActivityTypeController(IRepository<ActivityType> actvitytypecontext)
         {
             context = actvitytypecontext;
         }

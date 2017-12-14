@@ -48,33 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\201712132152341_inital.cs" />
-    <Compile Include="Migrations\201712132152341_inital.Designer.cs">
-      <DependentUpon>201712132152341_inital.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712132259235_updateModelsViewModels.cs" />
-    <Compile Include="Migrations\201712132259235_updateModelsViewModels.Designer.cs">
-      <DependentUpon>201712132259235_updateModelsViewModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712141522340_updateModel.cs" />
-    <Compile Include="Migrations\201712141522340_updateModel.Designer.cs">
-      <DependentUpon>201712141522340_updateModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712141622082_updates.cs" />
-    <Compile Include="Migrations\201712141622082_updates.Designer.cs">
-      <DependentUpon>201712141622082_updates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712141631361_updateObservation.cs" />
-    <Compile Include="Migrations\201712141631361_updateObservation.Designer.cs">
-      <DependentUpon>201712141631361_updateObservation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712141824290_updatemodel1.cs" />
-    <Compile Include="Migrations\201712141824290_updatemodel1.Designer.cs">
-      <DependentUpon>201712141824290_updatemodel1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712141827457_xyz.cs" />
-    <Compile Include="Migrations\201712141827457_xyz.Designer.cs">
-      <DependentUpon>201712141827457_xyz.cs</DependentUpon>
+    <Compile Include="Migrations\201712142009405_initialModel.cs" />
+    <Compile Include="Migrations\201712142009405_initialModel.Designer.cs">
+      <DependentUpon>201712142009405_initialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,26 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712132152341_inital.resx">
-      <DependentUpon>201712132152341_inital.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712132259235_updateModelsViewModels.resx">
-      <DependentUpon>201712132259235_updateModelsViewModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712141522340_updateModel.resx">
-      <DependentUpon>201712141522340_updateModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712141622082_updates.resx">
-      <DependentUpon>201712141622082_updates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712141631361_updateObservation.resx">
-      <DependentUpon>201712141631361_updateObservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712141824290_updatemodel1.resx">
-      <DependentUpon>201712141824290_updatemodel1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712141827457_xyz.resx">
-      <DependentUpon>201712141827457_xyz.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712142009405_initialModel.resx">
+      <DependentUpon>201712142009405_initialModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

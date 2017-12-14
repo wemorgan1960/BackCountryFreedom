@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using BackCountryFreedom.Core.Contracts;
 using BackCountryFreedom.Core.Models;
+using BackCountryFreedom.DataAccess.InMemory;
 
 namespace BackCountryFreedom.WebUI.Controllers
 {
@@ -19,8 +20,8 @@ namespace BackCountryFreedom.WebUI.Controllers
 
         public ActionResult Index()
         {
-            List<Season> season = context.Collection().ToList();
-            return View(season);
+            List<Season> seasons = context.Collection().ToList();
+            return View(seasons);
         }
 
         public ActionResult Create()

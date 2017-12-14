@@ -194,7 +194,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ActvityTypeController.cs" />
+    <Compile Include="Controllers\ActivityTypeController.cs" />
     <Compile Include="Controllers\DifficultyController.cs" />
     <Compile Include="Controllers\DistanceScaleController.cs" />
     <Compile Include="Controllers\ElevationScaleController.cs" />
@@ -282,10 +282,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\ActvityType\Index.cshtml" />
-    <Content Include="Views\ActvityType\Create.cshtml" />
-    <Content Include="Views\ActvityType\Edit.cshtml" />
-    <Content Include="Views\ActvityType\Delete.cshtml" />
+    <Content Include="Views\ActivityType\Index.cshtml" />
+    <Content Include="Views\ActivityType\Create.cshtml" />
+    <Content Include="Views\ActivityType\Edit.cshtml" />
+    <Content Include="Views\ActivityType\Delete.cshtml" />
     <Content Include="Views\Difficulty\Index.cshtml" />
     <Content Include="Views\Difficulty\Create.cshtml" />
     <Content Include="Views\Difficulty\Edit.cshtml" />
