@@ -7,15 +7,10 @@ using BackCountryFreedom.Core.Models;
 
 namespace BackCountryFreedom.Models
 {
-    public class EventType: BaseEntity
+    public class ActivityType: BaseEntity
     {
-        public EventType()
-        {
-            this.Conditions = new HashSet<Condition>();
-        }
         [Required]
         [StringLength (255)]
         public string Description { get; set; }
-        public virtual ICollection<Condition> Conditions { get; set; }
     }
 }

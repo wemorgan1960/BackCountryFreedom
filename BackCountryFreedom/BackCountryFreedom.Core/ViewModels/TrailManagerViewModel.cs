@@ -9,13 +9,12 @@ namespace BackCountryFreedom.Core.ViewModels
 {
     public class TrailManagerViewModel
     {
-        public Trail Trails { get; set; }
+        public Trail Trail { get; set; }
 
-        public IEnumerable<Event> Events { get; set; }
         public IEnumerable<Difficulty> Difficulties { get; set; }
         public IEnumerable<DistanceScale> DistanceScales { get; set; }
         public IEnumerable<ElevationScale> ElevationScales { get; set; }
-        public IEnumerable<EventType> EventTypes { get; set; }
+        public IEnumerable<ActivityType> ActivityTypes { get; set; }
         public IEnumerable<Location> Locations { get; set; }
     }
 }

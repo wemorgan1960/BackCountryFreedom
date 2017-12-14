@@ -9,13 +9,8 @@ namespace BackCountryFreedom.Models
 {
     public class Season: BaseEntity
     {
-        public Season()
-        {
-            this.Conditions = new HashSet<Condition>();
-        }
         [Required]
         [StringLength (100)]
         public String Description { get; set; }
-        public virtual ICollection<Condition> Conditions { get; set; }
     }
 }

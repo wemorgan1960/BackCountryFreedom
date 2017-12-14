@@ -7,9 +7,9 @@ using BackCountryFreedom.Models;
 
 namespace BackCountryFreedom.Core.ViewModels
 {
-    class ConditionManger
+    class ObservationSeasonViewModel
     {
-        public Condition Condition { get; set; }
+        public Observation Observation { get; set; }
 
         public IEnumerable<Season> Seasons { get; set; }
     }

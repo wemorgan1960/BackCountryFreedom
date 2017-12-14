@@ -56,6 +56,18 @@
     <Compile Include="Migrations\201712132259235_updateModelsViewModels.Designer.cs">
       <DependentUpon>201712132259235_updateModelsViewModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712141522340_updateModel.cs" />
+    <Compile Include="Migrations\201712141522340_updateModel.Designer.cs">
+      <DependentUpon>201712141522340_updateModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712141622082_updates.cs" />
+    <Compile Include="Migrations\201712141622082_updates.Designer.cs">
+      <DependentUpon>201712141622082_updates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712141631361_updateObservation.cs" />
+    <Compile Include="Migrations\201712141631361_updateObservation.Designer.cs">
+      <DependentUpon>201712141631361_updateObservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepository.cs" />
@@ -80,6 +92,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712132259235_updateModelsViewModels.resx">
       <DependentUpon>201712132259235_updateModelsViewModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712141522340_updateModel.resx">
+      <DependentUpon>201712141522340_updateModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712141622082_updates.resx">
+      <DependentUpon>201712141622082_updates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712141631361_updateObservation.resx">
+      <DependentUpon>201712141631361_updateObservation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

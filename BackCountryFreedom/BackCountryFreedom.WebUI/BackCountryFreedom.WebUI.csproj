@@ -194,9 +194,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ActvityTypeController.cs" />
+    <Compile Include="Controllers\DifficultyController.cs" />
+    <Compile Include="Controllers\DistanceScaleController.cs" />
+    <Compile Include="Controllers\ElevationScaleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\TrailManagerController.cs" />
+    <Compile Include="Controllers\ObservationController.cs" />
+    <Compile Include="Controllers\SeasonController.cs" />
+    <Compile Include="Controllers\TrailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -275,10 +282,41 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Trail\Index.cshtml" />
+    <Content Include="Views\Trail\Create.cshtml" />
+    <Content Include="Views\Trail\Edit.cshtml" />
+    <Content Include="Views\Trail\Delete.cshtml" />
+    <Content Include="Views\ActvityType\Index.cshtml" />
+    <Content Include="Views\ActvityType\Create.cshtml" />
+    <Content Include="Views\ActvityType\Edit.cshtml" />
+    <Content Include="Views\ActvityType\Delete.cshtml" />
+    <Content Include="Views\Difficulty\Index.cshtml" />
+    <Content Include="Views\Difficulty\Create.cshtml" />
+    <Content Include="Views\Difficulty\Edit.cshtml" />
+    <Content Include="Views\Difficulty\Delete.cshtml" />
+    <Content Include="Views\DistanceScale\Index.cshtml" />
+    <Content Include="Views\DistanceScale\Create.cshtml" />
+    <Content Include="Views\DistanceScale\Edit.cshtml" />
+    <Content Include="Views\DistanceScale\Delete.cshtml" />
+    <Content Include="Views\ElevationScale\Index.cshtml" />
+    <Content Include="Views\ElevationScale\Create.cshtml" />
+    <Content Include="Views\ElevationScale\Edit.cshtml" />
+    <Content Include="Views\ElevationScale\Delete.cshtml" />
+    <Content Include="Views\Location\Index.cshtml" />
+    <Content Include="Views\Location\Create.cshtml" />
+    <Content Include="Views\Location\Edit.cshtml" />
+    <Content Include="Views\Location\Delete.cshtml" />
+    <Content Include="Views\Observation\Index.cshtml" />
+    <Content Include="Views\Observation\Create.cshtml" />
+    <Content Include="Views\Observation\Edit.cshtml" />
+    <Content Include="Views\Observation\Delete.cshtml" />
+    <Content Include="Views\Season\Index.cshtml" />
+    <Content Include="Views\Season\Create.cshtml" />
+    <Content Include="Views\Season\Edit.cshtml" />
+    <Content Include="Views\Season\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\TrailManager\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

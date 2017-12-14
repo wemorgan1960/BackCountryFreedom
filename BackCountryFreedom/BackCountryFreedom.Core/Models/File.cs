@@ -10,9 +10,7 @@ namespace BackCountryFreedom.Models
 {
     public class File: BaseEntity
     {
-        public string PictureName { get; set; }
-        public byte[] Picture { get; set; }
-        public int ConditionId { get; set; }
-        public virtual Condition Condition { get; set; }
+        public string fileName { get; set; }
+        public byte[] file { get; set; }
     }
 }

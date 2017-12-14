@@ -13,7 +13,7 @@ namespace BackCountryFreedom.Core.ViewModels
         public IEnumerable<Difficulty> Difficulties { get; set; }
         public IEnumerable<DistanceScale> DistanceScales { get; set; }
         public IEnumerable<ElevationScale> ElevationScales { get; set; }
-        public IEnumerable<EventType> EventTypes { get; set; }
+        public IEnumerable<ActivityType> ActivityTypes { get; set; }
         public IEnumerable<Location> Locations { get; set; }
     }
 }

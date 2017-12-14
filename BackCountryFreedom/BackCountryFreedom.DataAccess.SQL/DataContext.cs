@@ -14,12 +14,11 @@ namespace BackCountryFreedom.DataAccess.SQL
         public DataContext() : base("DefaultConnection")
         {
         }
-        public DbSet<Condition> Conditions { get; set; }
+        public DbSet<Observation> Observations { get; set; }
         public DbSet<Difficulty> Difficulties { get; set; }
         public DbSet<DistanceScale> DistanceScales { get; set; }
         public DbSet<ElevationScale> ElevationScales { get; set; }
-        public DbSet<Event> Events { get; set; }
-        public DbSet<EventType> EventTypes { get; set; }
+        public DbSet<ActivityType> ActivityTypes { get; set; }
         public DbSet<File> Files { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<Season> Seasons { get; set; }

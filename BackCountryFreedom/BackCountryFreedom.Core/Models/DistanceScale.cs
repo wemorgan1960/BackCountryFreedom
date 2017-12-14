@@ -12,7 +12,5 @@ namespace BackCountryFreedom.Models
         [Required]
         [StringLength(255)]
         public string Description { get; set; }
-
-        public virtual ICollection<Event> Events { get; set; }
     }
 }
