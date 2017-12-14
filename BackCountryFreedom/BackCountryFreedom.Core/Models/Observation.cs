@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using BackCountryFreedom.Core.Models;
 
-namespace BackCountryFreedom.Models
+namespace BackCountryFreedom.Core.Models
 {
     public class Observation:BaseEntity
     {
@@ -25,7 +25,11 @@ namespace BackCountryFreedom.Models
 
         public float Distance { get; set; }
 
+        public string DistanceScale { get; set; }
+
         public float Elevation { get; set; }
+
+        public string ElevationScale { get; set; }
 
         public string ActivityType { get; set; }
 

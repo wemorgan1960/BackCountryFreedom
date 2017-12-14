@@ -1,4 +1,4 @@
-﻿@model BackCountryFreedom.Models.Observation
+﻿@model BackCountryFreedom.Core.ViewModels.ObservationManagerViewModel
 
 
 @using (Html.BeginForm()) 
@@ -10,122 +10,134 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.CreateAt, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.CreateAt, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CreateAt, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CreateAt, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Observation.CreateAt, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Observation.CreateAt, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.Date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Observation.Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Observation.Date, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.User, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.User, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.User, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.User, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Observation.User, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Observation.User, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Observation.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Observation.Name, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.Description, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Observation.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Observation.Description, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Distance, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.Distance, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Distance, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Distance, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Observation.Distance, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Observation.Distance, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Elevation, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.DistanceScale, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Elevation, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Elevation, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model=>model.Observation.DistanceScale, new SelectList(Model.DistanceScales,"DistanceScale","DistanceScale"),new { htmlAttribute = new { @class = "form-control" } })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ActivityType, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.Elevation, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ActivityType, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ActivityType, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Observation.Elevation, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Observation.Elevation, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Season, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.ElevationScale, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Season, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Season, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model=>model.Observation.ElevationScale, new SelectList(Model.ElevationScales,"ElevationScale","ElevationScale"),new { htmlAttribute = new { @class = "form-control" } })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Hazards, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.ActivityType, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Hazards, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Hazards, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Observation.ActivityType, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Observation.ActivityType, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.WeatherConditions, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.Season, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.WeatherConditions, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.WeatherConditions, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model=>model.Observation.Season, new SelectList(Model.Seasons,"Season","Season"),new { htmlAttribute = new { @class = "form-control" } })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TrailConditions, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.Hazards, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TrailConditions, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TrailConditions, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Observation.Hazards, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Observation.Hazards, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Rating, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.WeatherConditions, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Rating, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Rating, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Observation.WeatherConditions, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Observation.WeatherConditions, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.TrailConditions, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Observation.TrailConditions, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Observation.TrailConditions, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Observation.Rating, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.File, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.File, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.Observation.Rating, new SelectList(Model.Ratings, "Rating", "Rating"), new { htmlAttribute = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Observation.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Observation.Image, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Observation.Image, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Observation.File, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Observation.File, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Observation.File, "", new { @class = "text-danger" })
             </div>
         </div>
 

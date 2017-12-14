@@ -4,17 +4,25 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BackCountryFreedom.Core.Contracts;
-using BackCountryFreedom.Models;
+using BackCountryFreedom.Core.ViewModels;
+using BackCountryFreedom.Core.Models;
 
 namespace BackCountryFreedom.WebUI.Controllers
 {
     public class ObservationController : Controller
     {
         IRepository<Observation> context;
+        IRepository<Season> season;
+        IRepository<DistanceScale> distanceScale;
+        IRepository<ElevationScale> elevationScale;
 
-        public ObservationController(IRepository<Observation> observationcontext)
+        public ObservationController(IRepository<Observation> observationcontext, IRepository<Season> seasonContext
+            , IRepository<DistanceScale> distanceScaleContext, IRepository<ElevationScale> elevationScaleContext)
         {
             context = observationcontext;
+            season = seasonContext;
+            distanceScale = distanceScaleContext;
+            elevationScale = elevationScaleContext;
         }
 
         // GET: TrailManager
@@ -26,9 +34,14 @@ namespace BackCountryFreedom.WebUI.Controllers
 
         public ActionResult Create()
         {
-            Observation view = new Observation();
+            ObservationManagerViewModel viewModel = new ObservationManagerViewModel();
 
-            return View(view);
+            viewModel.Observation = new Observation();
+            viewModel.Seasons = season.Collection();
+            viewModel.DistanceScales = distanceScale.Collection();
+            viewModel.ElevationScales = elevationScale.Collection();
+            
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -56,9 +69,13 @@ namespace BackCountryFreedom.WebUI.Controllers
             }
             else
             {
-                Observation view = new Observation();
+                ObservationManagerViewModel viewModel = new ObservationManagerViewModel();
+                viewModel.Observation = observation;
+                viewModel.Seasons = season.Collection();
+                viewModel.DistanceScales = distanceScale.Collection();
+                viewModel.ElevationScales = elevationScale.Collection();
 
-                return View(view);
+                return View(viewModel);
             }
         }
         [HttpPost]
@@ -80,7 +97,9 @@ namespace BackCountryFreedom.WebUI.Controllers
                 observationToEdit.Name = observation.Name;
                 observationToEdit.Description = observation.Description;
                 observationToEdit.Distance = observation.Distance;
+                observationToEdit.DistanceScale = observationToEdit.DistanceScale;
                 observationToEdit.Elevation = observation.Elevation;
+                observationToEdit.ElevationScale = observation.ElevationScale;
                 observationToEdit.ActivityType = observation.ActivityType;
                 observationToEdit.Season = observation.Season;
                 observationToEdit.Hazards = observation.Hazards;

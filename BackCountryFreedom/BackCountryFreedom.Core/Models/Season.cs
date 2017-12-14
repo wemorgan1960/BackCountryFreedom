@@ -5,7 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using BackCountryFreedom.Core.Models;
 
-namespace BackCountryFreedom.Models
+namespace BackCountryFreedom.Core.Models
 {
     public class Season: BaseEntity
     {

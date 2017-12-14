@@ -68,6 +68,14 @@
     <Compile Include="Migrations\201712141631361_updateObservation.Designer.cs">
       <DependentUpon>201712141631361_updateObservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712141824290_updatemodel1.cs" />
+    <Compile Include="Migrations\201712141824290_updatemodel1.Designer.cs">
+      <DependentUpon>201712141824290_updatemodel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712141827457_xyz.cs" />
+    <Compile Include="Migrations\201712141827457_xyz.Designer.cs">
+      <DependentUpon>201712141827457_xyz.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepository.cs" />
@@ -101,6 +109,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712141631361_updateObservation.resx">
       <DependentUpon>201712141631361_updateObservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712141824290_updatemodel1.resx">
+      <DependentUpon>201712141824290_updatemodel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712141827457_xyz.resx">
+      <DependentUpon>201712141827457_xyz.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BackCountryFreedom.Core.Models;
-using BackCountryFreedom.Models;
 
 namespace BackCountryFreedom.DataAccess.SQL
 {

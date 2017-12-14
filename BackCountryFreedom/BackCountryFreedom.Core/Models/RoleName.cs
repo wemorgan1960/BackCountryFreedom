@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace BackCountryFreedom.Models
+namespace BackCountryFreedom.Core.Models
 {
     public static class RoleName
     {

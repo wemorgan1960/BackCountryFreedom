@@ -1,10 +1,4 @@
-﻿@model BackCountryFreedom.Models.Trail
-
-@{
-    ViewBag.Title = "Edit";
-}
-
-<h2>Edit</h2>
+﻿@model BackCountryFreedom.Core.ViewModels.TrailManagerViewModel
 
 
 @using (Html.BeginForm())
@@ -15,109 +9,96 @@
         <h4>Trail</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.Trail.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CreateAt, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Trail.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CreateAt, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CreateAt, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Trail.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Trail.Name, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Trail.Description, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Trail.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Trail.Description, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Trail.Distance, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Trail.Distance, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Trail.Distance, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Distance, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Trail.DistanceScale, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Distance, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Distance, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.Trail.DistanceScale, new SelectList(Model.DistanceScales, "DistanceScale", "DistanceScale"), new { htmlAttribute = new { @class = "form-control" } })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DistanceScale, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Trail.Elevation, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DistanceScale, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DistanceScale, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Trail.Elevation, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Trail.Elevation, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Elevation, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Trail.ElevationScale, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Elevation, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Elevation, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.Trail.ElevationScale, new SelectList(Model.ElevationScales, "ElevationScale", "ElevationScale"), new { htmlAttribute = new { @class = "form-control" } })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ElevationScale, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Trail.Location, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ElevationScale, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ElevationScale, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.Trail.Location, new SelectList(Model.Locations, "Location", "Province"), new { htmlAttribute = new { @class = "form-control" } })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Trail.Difficulty, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.Trail.Difficulty, new SelectList(Model.Locations, "Difficulty", "Province"), new { htmlAttribute = new { @class = "form-control" } })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Difficulty, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Trail.Type, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Difficulty, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Difficulty, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(model => model.Trail.Type, new SelectList(Model.ActivityTypes, "ActivityType", "ActivityType"), new { htmlAttribute = new { @class = "form-control" } })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Trail.Lat, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Trail.Lat, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Trail.Lat, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Lat, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Trail.Long, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Lat, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Lat, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Trail.Long, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Trail.Long, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Long, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Trail.Image, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Long, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Long, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Trail.Image, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Trail.Image, "", new { @class = "text-danger" })
             </div>
         </div>
 

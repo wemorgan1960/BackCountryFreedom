@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BackCountryFreedom.Core.Contracts;
-using BackCountryFreedom.Models;
+using BackCountryFreedom.Core.Models;
 
 namespace BackCountryFreedom.WebUI.Controllers
 {

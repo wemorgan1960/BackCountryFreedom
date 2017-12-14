@@ -1,10 +1,13 @@
-﻿@model IEnumerable<BackCountryFreedom.Models.Observation>
+﻿@model IEnumerable<BackCountryFreedom.Core.Models.Observation>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateAt)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Date)
         </th>
@@ -21,7 +24,13 @@
             @Html.DisplayNameFor(model => model.Distance)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.DistanceScale)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Elevation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ElevationScale)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ActivityType)
@@ -47,14 +56,14 @@
         <th>
             @Html.DisplayNameFor(model => model.File)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreateAt)
-        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateAt)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Date)
         </td>
@@ -71,7 +80,13 @@
             @Html.DisplayFor(modelItem => item.Distance)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.DistanceScale)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Elevation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ElevationScale)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ActivityType)
@@ -96,9 +111,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.File)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreateAt)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

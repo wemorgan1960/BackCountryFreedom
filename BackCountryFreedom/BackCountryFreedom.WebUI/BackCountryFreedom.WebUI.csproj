@@ -282,10 +282,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Trail\Index.cshtml" />
-    <Content Include="Views\Trail\Create.cshtml" />
-    <Content Include="Views\Trail\Edit.cshtml" />
-    <Content Include="Views\Trail\Delete.cshtml" />
     <Content Include="Views\ActvityType\Index.cshtml" />
     <Content Include="Views\ActvityType\Create.cshtml" />
     <Content Include="Views\ActvityType\Edit.cshtml" />
@@ -306,14 +302,18 @@
     <Content Include="Views\Location\Create.cshtml" />
     <Content Include="Views\Location\Edit.cshtml" />
     <Content Include="Views\Location\Delete.cshtml" />
-    <Content Include="Views\Observation\Index.cshtml" />
-    <Content Include="Views\Observation\Create.cshtml" />
-    <Content Include="Views\Observation\Edit.cshtml" />
-    <Content Include="Views\Observation\Delete.cshtml" />
     <Content Include="Views\Season\Index.cshtml" />
     <Content Include="Views\Season\Create.cshtml" />
     <Content Include="Views\Season\Edit.cshtml" />
     <Content Include="Views\Season\Delete.cshtml" />
+    <Content Include="Views\Observation\Index.cshtml" />
+    <Content Include="Views\Observation\Create.cshtml" />
+    <Content Include="Views\Observation\Edit.cshtml" />
+    <Content Include="Views\Observation\Delete.cshtml" />
+    <Content Include="Views\Trail\Index.cshtml" />
+    <Content Include="Views\Trail\Create.cshtml" />
+    <Content Include="Views\Trail\Edit.cshtml" />
+    <Content Include="Views\Trail\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

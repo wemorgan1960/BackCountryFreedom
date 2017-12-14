@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace BackCountryFreedom.Models
+namespace BackCountryFreedom.Core.Models
 {
     public class LatValidation:ValidationAttribute
     {

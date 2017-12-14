@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using BackCountryFreedom.Core.Models;
 
-namespace BackCountryFreedom.Models
+namespace BackCountryFreedom.Core.Models
 {
     public class File: BaseEntity
     {

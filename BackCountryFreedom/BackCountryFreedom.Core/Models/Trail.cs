@@ -5,7 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using BackCountryFreedom.Core.Models;
 
-namespace BackCountryFreedom.Models
+namespace BackCountryFreedom.Core.Models
 {
 
     public class Trail: BaseEntity
@@ -27,6 +27,8 @@ namespace BackCountryFreedom.Models
 
         public string Difficulty { get; set; }
         public string Type { get; set; }
+
+        public virtual ICollection<ActivityType> ActivityTypes { get; set; }
 
 
         [RegularExpression(@"^(\+|-)?(?:180(?:(?:\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,6})?))$", ErrorMessage = "Decmial Format 15.12345")]

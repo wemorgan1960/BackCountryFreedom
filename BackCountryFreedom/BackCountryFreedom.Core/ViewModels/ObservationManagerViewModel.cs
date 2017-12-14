@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BackCountryFreedom.Models;
+using BackCountryFreedom.Core.Models;
 
 namespace BackCountryFreedom.Core.ViewModels
 {
-    public class TrailListViewModel
+    public class ObservationManagerViewModel
     {
-        public IEnumerable<Trail> Trails { get; set; }
-        public IEnumerable<Difficulty> Difficulties { get; set; }
+        public Observation Observation { get; set; }
+
+        public IEnumerable<ActivityType> ActivityTypes { get; set; }
+        public IEnumerable<Season> Seasons { get; set; }
         public IEnumerable<DistanceScale> DistanceScales { get; set; }
         public IEnumerable<ElevationScale> ElevationScales { get; set; }
-        public IEnumerable<ActivityType> ActivityTypes { get; set; }
-        public IEnumerable<Location> Locations { get; set; }
+        public IEnumerable<Rating> Ratings { get; set; }
+
     }
 }

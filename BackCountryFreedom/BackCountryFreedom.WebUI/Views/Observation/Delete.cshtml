@@ -1,4 +1,4 @@
-﻿@model BackCountryFreedom.Models.Observation
+﻿@model BackCountryFreedom.Core.Models.Observation
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
@@ -54,11 +54,27 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.DistanceScale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistanceScale)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Elevation)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Elevation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ElevationScale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ElevationScale)
         </dd>
 
         <dt>

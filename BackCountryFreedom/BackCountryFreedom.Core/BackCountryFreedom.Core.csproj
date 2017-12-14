@@ -52,12 +52,12 @@
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\LatValidation.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Rating.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\Season.cs" />
     <Compile Include="Models\Trail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ObservationSeasonViewModel.cs" />
-    <Compile Include="ViewModels\TrailListViewModel.cs" />
+    <Compile Include="ViewModels\ObservationManagerViewModel.cs" />
     <Compile Include="ViewModels\TrailManagerViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
