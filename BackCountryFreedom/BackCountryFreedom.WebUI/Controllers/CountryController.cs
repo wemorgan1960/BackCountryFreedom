@@ -13,9 +13,9 @@ namespace BackCountryFreedom.WebUI.Controllers
     {
         IRepository<Country> context;
 
-        public CountryController()
+        public CountryController(IRepository<Country> context)
         {
-            context = new InMemoryRepository<Country>();
+            this.context = context;
         }
 
         // GET: TrailManager

@@ -13,9 +13,9 @@ namespace BackCountryFreedom.WebUI.Controllers
     {
         IRepository<Province> context;
 
-        public ProvinceController()
+        public ProvinceController(IRepository<Province> context)
         {
-            context = new InMemoryRepository<Province>();
+            this.context = context;
         }
 
         public ActionResult Index()

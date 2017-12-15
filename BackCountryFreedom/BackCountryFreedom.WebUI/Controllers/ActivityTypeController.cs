@@ -13,9 +13,9 @@ namespace BackCountryFreedom.WebUI.Controllers
     {
         IRepository<ActivityType> context;
 
-        public ActivityTypeController()
+        public ActivityTypeController(IRepository<ActivityType> context)
         {
-            context = new InMemoryRepository<ActivityType>();
+            this.context =context;
         }
 
         // GET: TrailManager

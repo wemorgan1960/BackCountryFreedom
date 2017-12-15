@@ -1,45 +1,37 @@
-﻿using BackCountryFreedom.Core.Contracts;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+using BackCountryFreedom.Core.Contracts;
 using BackCountryFreedom.Core.Models;
 using BackCountryFreedom.Core.ViewModels;
 using BackCountryFreedom.DataAccess.InMemory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
 
 namespace BackCountryFreedom.WebUI.Controllers
 {
     public class HomeController : Controller
     {
         IRepository<Trail> context;
-        IRepository<Difficulty> difficulty;
-        IRepository<DistanceScale> distanceScale;
-        IRepository<ElevationScale> elevationScale;
         IRepository<Location> location;
-        IRepository<ActivityType> actvitytype;
 
-        public HomeController()
+        public HomeController(IRepository<Trail> context, IRepository<Location> locationContext)
         {
-            context = new InMemoryRepository<Trail>();
-            difficulty = new InMemoryRepository<Difficulty>();
-            distanceScale = new InMemoryRepository<DistanceScale>();
-            elevationScale = new InMemoryRepository<ElevationScale>();
-            location = new InMemoryRepository<Location>();
-            actvitytype = new InMemoryRepository<ActivityType>();
+            this.context = context;
+            location = locationContext;
+
         }
-        public ActionResult Index(string Location = null)
+        public ActionResult Index(string fLocation = null)
         {
             List<Trail> trails;
             List<Location> locations = location.Collection().ToList();
 
-            if (Location ==null)
+
+            if (fLocation ==null)
             {
                 trails = context.Collection().ToList();
             }
             else
             {
-                trails = context.Collection().Where(t => t.Location == Location).ToList();
+                trails = context.Collection().Where(t => t.Location == fLocation).ToList();
             }
 
             TrailListViewModel model = new TrailListViewModel();

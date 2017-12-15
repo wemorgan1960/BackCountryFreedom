@@ -22,16 +22,19 @@ namespace BackCountryFreedom.WebUI.Controllers
         IRepository<Country> country;
         IRepository<ActivityType> actvitytype;
 
-        public TrailController()
+        public TrailController(IRepository<Trail> context, IRepository<Difficulty> difficultyContext,
+            IRepository<DistanceScale> distanceScaleContext, IRepository<ElevationScale> elevationScaleContext,
+            IRepository<Location> locationContext, IRepository<Province> provinceContext,
+            IRepository<Country> countryContext, IRepository<ActivityType> actvitytypeContext)
         {
-            context = new InMemoryRepository<Trail>();
-            difficulty = new InMemoryRepository<Difficulty>();
-            distanceScale = new InMemoryRepository<DistanceScale>();
-            elevationScale = new InMemoryRepository<ElevationScale>();
-            location = new InMemoryRepository<Location>();
-            province = new InMemoryRepository<Province>();
-            country = new InMemoryRepository<Country>();
-            actvitytype = new InMemoryRepository<ActivityType>();
+            this.context = context;
+            difficulty = difficultyContext;
+            distanceScale = distanceScaleContext;
+            elevationScale = elevationScaleContext;
+            location = locationContext;
+            province = provinceContext;
+            country = countryContext;
+            actvitytype = actvitytypeContext;
         }
 
         // GET: TrailManager

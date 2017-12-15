@@ -13,9 +13,9 @@ namespace BackCountryFreedom.WebUI.Controllers
     {
         IRepository<Difficulty> context;
 
-        public DifficultyController()
+        public DifficultyController(IRepository<Difficulty> context)
         {
-            context = new InMemoryRepository<Difficulty>();
+            this.context = context;
         }
 
         // GET: TrailManager

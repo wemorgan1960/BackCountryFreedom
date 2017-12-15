@@ -13,9 +13,9 @@ namespace BackCountryFreedom.WebUI.Controllers
     {
         IRepository<Location> context;
 
-        public LocationController()
+        public LocationController(IRepository<Location> context)
         {
-            context = new InMemoryRepository<Location>();
+            this.context = context;
         }
 
         // GET: TrailManager

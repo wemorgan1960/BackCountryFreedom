@@ -17,12 +17,13 @@ namespace BackCountryFreedom.WebUI.Controllers
         IRepository<DistanceScale> distanceScale;
         IRepository<ElevationScale> elevationScale;
 
-        public ObservationController()
+        public ObservationController(IRepository<Observation> context, IRepository<Season> seasonContext,
+            IRepository<DistanceScale> distanceScaleContext, IRepository<ElevationScale> elevationScaleContext)
         {
-            context = new InMemoryRepository<Observation>();
-            season = new InMemoryRepository<Season>();
-            distanceScale = new InMemoryRepository<DistanceScale>();
-            elevationScale = new InMemoryRepository<ElevationScale>();
+            this.context = context;
+            season = seasonContext;
+            distanceScale = distanceScaleContext;
+            elevationScale = elevationScaleContext;
         }
 
         // GET: TrailManager

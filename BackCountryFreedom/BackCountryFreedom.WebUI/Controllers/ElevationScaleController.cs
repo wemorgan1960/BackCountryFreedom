@@ -13,9 +13,9 @@ namespace BackCountryFreedom.WebUI.Controllers
     {
         IRepository<ElevationScale> context;
 
-        public ElevationScaleController()
+        public ElevationScaleController(IRepository<ElevationScale> context)
         {
-            context = new InMemoryRepository<ElevationScale>();
+            this.context = context;
         }
 
         // GET: TrailManager

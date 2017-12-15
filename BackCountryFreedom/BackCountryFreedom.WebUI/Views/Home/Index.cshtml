@@ -4,14 +4,16 @@
     ViewBag.Title = "Home Page";
 }
 <h1> Trails</h1>
-
+<p>
+    <a href="@Url.Action("Create Trail", "Create", "Trail")" class="btn btn-default">Create New Trail</a>
+</p>
 <div class="col-md-2">
     <h4> Filter by Location</h4>
     <div class="list-group">
         @Html.ActionLink("All", "Index", null, new { @class = Request["Location"] == null ? "list-group-item active" : "list-group-item" })
         @foreach (var loc in Model.Locations)
         {
-            @Html.ActionLink(loc.Description + " " + loc.Province, "Index", new { Location = loc.Description }, new { @class = Request["Location"] == loc.Description ? "list-group-item active" : "list-group-item" })
+            @Html.ActionLink(loc.Description + " " + loc.Description, "Index", new { Location = loc.Description }, new { @class = Request["Location"] == loc.Description ? "list-group-item active" : "list-group-item" })
         }
     </div>
 </div>
@@ -39,7 +41,13 @@
             Location
         </th>
         <th>
-            Difficutly
+            ProvState
+        </th>
+        <th>
+            Country
+        </th>
+        <th>
+            Difficulty
         </th>
         <th>
             Activity Type
@@ -58,51 +66,54 @@
 
     @foreach (var item in Model.Trails)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Distance)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DistanceScale)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Elevation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ElevationScale)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Difficulty)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Long)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Distance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DistanceScale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Elevation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ElevationScale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProvState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Difficulty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Long)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", "Details",new { id = item.Id })" class="btn btn-default">Edit Trail</a>
+        </td>
+    </tr>
     }
-
 </table>
 
 

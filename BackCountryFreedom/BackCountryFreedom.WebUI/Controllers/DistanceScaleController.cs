@@ -13,9 +13,9 @@ namespace BackCountryFreedom.WebUI.Controllers
     {
         IRepository<DistanceScale> context;
 
-        public DistanceScaleController()
+        public DistanceScaleController(IRepository<DistanceScale> context)
         {
-            context = new InMemoryRepository<DistanceScale>();
+            this.context = context;
         }
 
         // GET: TrailManager
