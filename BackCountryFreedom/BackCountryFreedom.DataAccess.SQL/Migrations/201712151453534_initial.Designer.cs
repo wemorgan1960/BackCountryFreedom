@@ -13,7 +13,7 @@ namespace BackCountryFreedom.DataAccess.SQL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201712151346243_initial"; }
+            get { return "201712151453534_initial"; }
         }
         
         string IMigrationMetadata.Source

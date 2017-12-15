@@ -21,6 +21,16 @@ namespace BackCountryFreedom.DataAccess.SQL.Migrations
                 .Index(t => t.Trail_Id);
             
             CreateTable(
+                "dbo.Countries",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        Description = c.String(nullable: false, maxLength: 255),
+                        CreateAt = c.DateTimeOffset(nullable: false, precision: 7),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.Difficulties",
                 c => new
                     {
@@ -97,6 +107,16 @@ namespace BackCountryFreedom.DataAccess.SQL.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
+                "dbo.Provinces",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        Description = c.String(nullable: false, maxLength: 255),
+                        CreateAt = c.DateTimeOffset(nullable: false, precision: 7),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.Seasons",
                 c => new
                     {
@@ -137,12 +157,14 @@ namespace BackCountryFreedom.DataAccess.SQL.Migrations
             DropIndex("dbo.ActivityTypes", new[] { "Trail_Id" });
             DropTable("dbo.Trails");
             DropTable("dbo.Seasons");
+            DropTable("dbo.Provinces");
             DropTable("dbo.Observations");
             DropTable("dbo.Locations");
             DropTable("dbo.Files");
             DropTable("dbo.ElevationScales");
             DropTable("dbo.DistanceScales");
             DropTable("dbo.Difficulties");
+            DropTable("dbo.Countries");
             DropTable("dbo.ActivityTypes");
         }
     }

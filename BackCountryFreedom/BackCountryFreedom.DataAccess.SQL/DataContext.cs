@@ -20,6 +20,8 @@ namespace BackCountryFreedom.DataAccess.SQL
         public DbSet<ActivityType> ActivityTypes { get; set; }
         public DbSet<File> Files { get; set; }
         public DbSet<Location> Locations { get; set; }
+        public DbSet<Province> Provinces { get; set; }
+        public DbSet<Country> Countries { get; set; }
         public DbSet<Season> Seasons { get; set; }
         public DbSet<Trail> Trails { get; set; }
 
