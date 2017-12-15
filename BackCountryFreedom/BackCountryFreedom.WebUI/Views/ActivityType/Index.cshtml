@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BackCountryFreedom.Core.Models.ActivityType>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create", "ActivityType", "Create")" class="btn btn-default">Create Activity Type</a>
 </p>
 <table class="table">
     <tr>
@@ -17,9 +17,9 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            <a href="@Url.Action("Edit", "Edit", new { id = item.Id })" class="btn btn-default">Edit Activity Type</a>|
+            <a href="@Url.Action("Details", "Details", new { id = item.Id })" class="btn btn-default">Details Activity Type</a>|
+            <a href="@Url.Action("Delete", "Delete", new { id = item.Id })" class="btn btn-default">Delete Activity Type</a>
         </td>
     </tr>
 }

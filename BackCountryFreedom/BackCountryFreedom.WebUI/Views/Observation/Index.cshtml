@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BackCountryFreedom.Core.Models.Observation>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create", "Observation", "Create")" class="btn btn-default">Create Observation</a>
 </p>
 <table class="table">
     <tr>

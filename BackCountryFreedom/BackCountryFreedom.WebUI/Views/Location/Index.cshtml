@@ -1,15 +1,12 @@
 ﻿@model IEnumerable<BackCountryFreedom.Core.Models.Location>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create", "Location", "Create")" class="btn btn-default">Create Location</a>
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Province)
         </th>
         <th></th>
     </tr>
@@ -18,9 +15,6 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Province)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

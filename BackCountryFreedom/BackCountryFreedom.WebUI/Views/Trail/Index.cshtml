@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<BackCountryFreedom.Core.Models.Trail>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create", "Trail", "Create")" class="btn btn-default">Create Trail</a>
 </p>
 <table class="table">
     <tr>
