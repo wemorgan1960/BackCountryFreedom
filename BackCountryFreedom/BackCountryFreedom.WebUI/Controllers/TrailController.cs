@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using BackCountryFreedom.Core.Contracts;
 using BackCountryFreedom.Core.ViewModels;
 using BackCountryFreedom.Core.Models;
-
+using BackCountryFreedom.DataAccess.InMemory;
 
 namespace BackCountryFreedom.WebUI.Controllers
 {
@@ -20,15 +20,14 @@ namespace BackCountryFreedom.WebUI.Controllers
         IRepository<Location> location;
         IRepository<ActivityType> actvitytype;
 
-        public TrailController(IRepository<Trail> trailcontext, IRepository<Difficulty> difficultycontext, IRepository<DistanceScale> distanceScalecontext,
-           IRepository<ElevationScale> elevationScalecontext, IRepository<Location> locationcontext, IRepository<ActivityType> activityTypecontext)
+        public TrailController()
         {
-            context = trailcontext;
-            difficulty = difficultycontext;
-            distanceScale = distanceScalecontext;
-            elevationScale = elevationScalecontext;
-            location = locationcontext;
-            actvitytype = activityTypecontext;
+            context = new InMemoryRepository<Trail>();
+            difficulty = new InMemoryRepository<Difficulty>();
+            distanceScale = new InMemoryRepository<DistanceScale>();
+            elevationScale = new InMemoryRepository<ElevationScale>();
+            location = new InMemoryRepository<Location>();
+            actvitytype = new InMemoryRepository<ActivityType>();
         }
 
         // GET: TrailManager

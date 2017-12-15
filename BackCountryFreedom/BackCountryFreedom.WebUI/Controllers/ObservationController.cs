@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using BackCountryFreedom.Core.Contracts;
 using BackCountryFreedom.Core.ViewModels;
 using BackCountryFreedom.Core.Models;
+using BackCountryFreedom.DataAccess.InMemory;
 
 namespace BackCountryFreedom.WebUI.Controllers
 {
@@ -16,13 +17,12 @@ namespace BackCountryFreedom.WebUI.Controllers
         IRepository<DistanceScale> distanceScale;
         IRepository<ElevationScale> elevationScale;
 
-        public ObservationController(IRepository<Observation> observationcontext, IRepository<Season> seasonContext
-            , IRepository<DistanceScale> distanceScaleContext, IRepository<ElevationScale> elevationScaleContext)
+        public ObservationController()
         {
-            context = observationcontext;
-            season = seasonContext;
-            distanceScale = distanceScaleContext;
-            elevationScale = elevationScaleContext;
+            context = new InMemoryRepository<Observation>();
+            season = new InMemoryRepository<Season>();
+            distanceScale = new InMemoryRepository<DistanceScale>();
+            elevationScale = new InMemoryRepository<ElevationScale>();
         }
 
         // GET: TrailManager

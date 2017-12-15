@@ -13,9 +13,9 @@ namespace BackCountryFreedom.WebUI.Controllers
     {
         IRepository<Season> context;
 
-        public SeasonController(IRepository<Season> seasoncontext)
+        public SeasonController()
         {
-            context = seasoncontext;
+            context = new InMemoryRepository<Season>();
         }
 
         public ActionResult Index()

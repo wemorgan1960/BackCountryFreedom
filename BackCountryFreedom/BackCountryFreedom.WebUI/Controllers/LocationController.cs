@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using BackCountryFreedom.Core.Contracts;
 using BackCountryFreedom.Core.Models;
+using BackCountryFreedom.DataAccess.InMemory;
 
 namespace BackCountryFreedom.WebUI.Controllers
 {
@@ -12,9 +13,9 @@ namespace BackCountryFreedom.WebUI.Controllers
     {
         IRepository<Location> context;
 
-        public LocationController(IRepository<Location> locationcontext)
+        public LocationController()
         {
-            context = locationcontext;
+            context = new InMemoryRepository<Location>();
         }
 
         // GET: TrailManager
