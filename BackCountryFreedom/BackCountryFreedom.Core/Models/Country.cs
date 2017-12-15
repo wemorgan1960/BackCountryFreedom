@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Web;
-using BackCountryFreedom.Core.Models;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace BackCountryFreedom.Core.Models
 {
-    public class Location: BaseEntity
+    public class Country:BaseEntity
     {
         [Required]
         [StringLength(255)]
-        [DisplayName("Location")]
+        [DisplayName("Country")]
         public string Description { get; set; }
     }
 }

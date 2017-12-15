@@ -1,31 +1,108 @@
-﻿@{
+﻿@model BackCountryFreedom.Core.ViewModels.TrailListViewModel
+
+@{
     ViewBag.Title = "Home Page";
 }
+<h1> Trails</h1>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+<div class="col-md-2">
+    <h4> Filter by Location</h4>
+    <div class="list-group">
+        @Html.ActionLink("All", "Index", null, new { @class = Request["Location"] == null ? "list-group-item active" : "list-group-item" })
+        @foreach (var loc in Model.Locations)
+        {
+            @Html.ActionLink(loc.Description + " " + loc.Province, "Index", new { Location = loc.Description }, new { @class = Request["Location"] == loc.Description ? "list-group-item active" : "list-group-item" })
+        }
     </div>
 </div>
+<table class="table">
+    <tr>
+        <th>
+            Trail Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Distance
+        </th>
+        <th>
+            Distance Scale
+        </th>
+        <th>
+            Elevation gain
+        </th>
+        <th>
+            Elevation Scale
+        </th>
+        <th>
+            Location
+        </th>
+        <th>
+            Difficutly
+        </th>
+        <th>
+            Activity Type
+        </th>
+        <th>
+            Lat.
+        </th>
+        <th>
+            Long.
+        </th>
+        <th>
+            Image
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Trails)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Distance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DistanceScale)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Elevation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ElevationScale)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Difficulty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Long)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+

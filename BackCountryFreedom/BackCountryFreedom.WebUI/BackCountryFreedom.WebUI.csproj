@@ -195,6 +195,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ActivityTypeController.cs" />
+    <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\DifficultyController.cs" />
     <Compile Include="Controllers\DistanceScaleController.cs" />
     <Compile Include="Controllers\ElevationScaleController.cs" />
@@ -202,6 +203,7 @@
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ObservationController.cs" />
+    <Compile Include="Controllers\ProvinceController.cs" />
     <Compile Include="Controllers\SeasonController.cs" />
     <Compile Include="Controllers\TrailController.cs" />
     <Compile Include="Global.asax.cs">
@@ -314,6 +316,14 @@
     <Content Include="Views\Trail\Create.cshtml" />
     <Content Include="Views\Trail\Edit.cshtml" />
     <Content Include="Views\Trail\Delete.cshtml" />
+    <Content Include="Views\Country\Index.cshtml" />
+    <Content Include="Views\Country\Create.cshtml" />
+    <Content Include="Views\Country\Edit.cshtml" />
+    <Content Include="Views\Country\Delete.cshtml" />
+    <Content Include="Views\Province\Index.cshtml" />
+    <Content Include="Views\Province\Create.cshtml" />
+    <Content Include="Views\Province\Edit.cshtml" />
+    <Content Include="Views\Province\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

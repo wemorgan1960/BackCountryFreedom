@@ -3,7 +3,7 @@ namespace BackCountryFreedom.DataAccess.SQL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initialModel : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -67,7 +67,6 @@ namespace BackCountryFreedom.DataAccess.SQL.Migrations
                     {
                         Id = c.String(nullable: false, maxLength: 128),
                         Description = c.String(nullable: false, maxLength: 255),
-                        Province = c.String(nullable: false, maxLength: 255),
                         CreateAt = c.DateTimeOffset(nullable: false, precision: 7),
                     })
                 .PrimaryKey(t => t.Id);
@@ -119,8 +118,10 @@ namespace BackCountryFreedom.DataAccess.SQL.Migrations
                         Elevation = c.Single(nullable: false),
                         ElevationScale = c.String(),
                         Location = c.String(),
+                        ProvState = c.String(),
+                        Country = c.String(),
                         Difficulty = c.String(),
-                        Type = c.String(),
+                        ActivityType = c.String(),
                         Lat = c.Decimal(precision: 18, scale: 2),
                         Long = c.Decimal(precision: 18, scale: 2),
                         Image = c.String(),

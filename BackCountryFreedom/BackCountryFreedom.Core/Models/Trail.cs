@@ -25,8 +25,13 @@ namespace BackCountryFreedom.Core.Models
 
         public string Location { get; set; }
 
+        public string ProvState { get; set; }
+
+        public string Country { get; set; }
+
         public string Difficulty { get; set; }
-        public string Type { get; set; }
+
+        public string ActivityType { get; set; }
 
         public virtual ICollection<ActivityType> ActivityTypes { get; set; }
 

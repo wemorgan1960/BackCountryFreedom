@@ -1,47 +1,46 @@
-﻿using System;
+﻿using BackCountryFreedom.Core.Contracts;
+using BackCountryFreedom.Core.Models;
+using BackCountryFreedom.DataAccess.InMemory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using BackCountryFreedom.Core.Contracts;
-using BackCountryFreedom.Core.Models;
-using BackCountryFreedom.DataAccess.InMemory;
 
 namespace BackCountryFreedom.WebUI.Controllers
 {
-    public class LocationController : Controller
+    public class ProvinceController : Controller
     {
-        IRepository<Location> context;
+        IRepository<Province> context;
 
-        public LocationController()
+        public ProvinceController()
         {
-            context = new InMemoryRepository<Location>();
+            context = new InMemoryRepository<Province>();
         }
 
-        // GET: TrailManager
         public ActionResult Index()
         {
-            List<Location> locations = context.Collection().ToList();
-            return View(locations);
+            List<Province> province = context.Collection().ToList();
+            return View(province);
         }
 
         public ActionResult Create()
         {
-            Location view = new Location();
+            Province view = new Province();
 
             return View(view);
         }
 
         [HttpPost]
-        public ActionResult Create(Location location)
+        public ActionResult Create(Province province)
         {
             if (!ModelState.IsValid)
             {
-                return View(location);
+                return View(province);
             }
             else
             {
-                context.Insert(location);
+                context.Insert(province);
                 context.Commit();
 
                 return RedirectToAction("Index");
@@ -50,23 +49,23 @@ namespace BackCountryFreedom.WebUI.Controllers
 
         public ActionResult Edit(string Id)
         {
-            Location location = context.Find(Id);
-            if (location == null)
+            Province province = context.Find(Id);
+            if (province == null)
             {
                 return HttpNotFound();
             }
             else
             {
-                Location view = new Location();
+                Province view = new Province();
 
                 return View(view);
             }
         }
         [HttpPost]
-        public ActionResult Edit(Location location, string Id)
+        public ActionResult Edit(Province province, string Id)
         {
-            Location locationToEdit = context.Find(Id);
-            if (location == null)
+            Province provinceToEdit = context.Find(Id);
+            if (province == null)
             {
                 return HttpNotFound();
             }
@@ -74,9 +73,9 @@ namespace BackCountryFreedom.WebUI.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                    return View(location);
+                    return View(province);
                 }
-                locationToEdit.Description = location.Description;
+                provinceToEdit.Description = province.Description;
 
                 context.Commit();
 
@@ -85,22 +84,22 @@ namespace BackCountryFreedom.WebUI.Controllers
         }
         public ActionResult Delete(string Id)
         {
-            Location locationToEdit = context.Find(Id);
-            if (locationToEdit == null)
+            Province provinceToEdit = context.Find(Id);
+            if (provinceToEdit == null)
             {
                 return HttpNotFound();
             }
             else
             {
-                return View(locationToEdit);
+                return View(provinceToEdit);
             }
         }
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult ConfirmDelete(string Id)
         {
-            Location locationToDelete = context.Find(Id);
-            if (locationToDelete == null)
+            Province provinceToDelete = context.Find(Id);
+            if (provinceToDelete == null)
             {
                 return HttpNotFound();
             }

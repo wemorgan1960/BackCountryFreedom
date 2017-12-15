@@ -59,21 +59,35 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Trail.Location, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Trail.Location, new SelectList(Model.Locations, "Location", "Province"), new { htmlAttribute = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.Trail.Location, new SelectList(Model.Locations, "Location", "Location"), new { htmlAttribute = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Trail.ProvState, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Trail.ProvState, new SelectList(Model.Locations, "Location", "Province"), new { htmlAttribute = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Trail.Country, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Trail.Country, new SelectList(Model.Locations, "Location", "Country"), new { htmlAttribute = new { @class = "form-control" } })
         </div>
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.Trail.Difficulty, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Trail.Difficulty, new SelectList(Model.Locations, "Difficulty", "Province"), new { htmlAttribute = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.Trail.Difficulty, new SelectList(Model.Locations, "Difficulty", "Difficulty"), new { htmlAttribute = new { @class = "form-control" } })
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Trail.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Trail.ActivityType, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Trail.Type, new SelectList(Model.ActivityTypes, "ActivityType", "ActivityType"), new { htmlAttribute = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.Trail.ActivityType, new SelectList(Model.ActivityTypes, "ActivityType", "ActivityType"), new { htmlAttribute = new { @class = "form-control" } })
         </div>
     </div>
 

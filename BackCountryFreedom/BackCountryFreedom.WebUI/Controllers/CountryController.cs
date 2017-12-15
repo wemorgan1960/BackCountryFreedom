@@ -1,47 +1,47 @@
-﻿using System;
+﻿using BackCountryFreedom.Core.Contracts;
+using BackCountryFreedom.Core.Models;
+using BackCountryFreedom.DataAccess.InMemory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using BackCountryFreedom.Core.Contracts;
-using BackCountryFreedom.Core.Models;
-using BackCountryFreedom.DataAccess.InMemory;
 
 namespace BackCountryFreedom.WebUI.Controllers
 {
-    public class LocationController : Controller
+    public class CountryController : Controller
     {
-        IRepository<Location> context;
+        IRepository<Country> context;
 
-        public LocationController()
+        public CountryController()
         {
-            context = new InMemoryRepository<Location>();
+            context = new InMemoryRepository<Country>();
         }
 
         // GET: TrailManager
         public ActionResult Index()
         {
-            List<Location> locations = context.Collection().ToList();
-            return View(locations);
+            List<Country> country = context.Collection().ToList();
+            return View(country);
         }
 
         public ActionResult Create()
         {
-            Location view = new Location();
+            Country view = new Country();
 
             return View(view);
         }
 
         [HttpPost]
-        public ActionResult Create(Location location)
+        public ActionResult Create(Country country)
         {
             if (!ModelState.IsValid)
             {
-                return View(location);
+                return View(country);
             }
             else
             {
-                context.Insert(location);
+                context.Insert(country);
                 context.Commit();
 
                 return RedirectToAction("Index");
@@ -50,23 +50,23 @@ namespace BackCountryFreedom.WebUI.Controllers
 
         public ActionResult Edit(string Id)
         {
-            Location location = context.Find(Id);
-            if (location == null)
+            Country country = context.Find(Id);
+            if (country == null)
             {
                 return HttpNotFound();
             }
             else
             {
-                Location view = new Location();
+                Country view = new Country();
 
                 return View(view);
             }
         }
         [HttpPost]
-        public ActionResult Edit(Location location, string Id)
+        public ActionResult Edit(Country country, string Id)
         {
-            Location locationToEdit = context.Find(Id);
-            if (location == null)
+            Country countryToEdit = context.Find(Id);
+            if (country == null)
             {
                 return HttpNotFound();
             }
@@ -74,9 +74,9 @@ namespace BackCountryFreedom.WebUI.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                    return View(location);
+                    return View(country);
                 }
-                locationToEdit.Description = location.Description;
+                countryToEdit.Description = country.Description;
 
                 context.Commit();
 
@@ -85,22 +85,22 @@ namespace BackCountryFreedom.WebUI.Controllers
         }
         public ActionResult Delete(string Id)
         {
-            Location locationToEdit = context.Find(Id);
-            if (locationToEdit == null)
+            Country countryToEdit = context.Find(Id);
+            if (countryToEdit == null)
             {
                 return HttpNotFound();
             }
             else
             {
-                return View(locationToEdit);
+                return View(countryToEdit);
             }
         }
         [HttpPost]
         [ActionName("Delete")]
         public ActionResult ConfirmDelete(string Id)
         {
-            Location locationToDelete = context.Find(Id);
-            if (locationToDelete == null)
+            Country countryToDelete = context.Find(Id);
+            if (countryToDelete == null)
             {
                 return HttpNotFound();
             }

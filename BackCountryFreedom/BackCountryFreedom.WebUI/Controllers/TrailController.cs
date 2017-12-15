@@ -18,6 +18,8 @@ namespace BackCountryFreedom.WebUI.Controllers
         IRepository<DistanceScale> distanceScale;
         IRepository<ElevationScale> elevationScale;
         IRepository<Location> location;
+        IRepository<Province> province;
+        IRepository<Country> country;
         IRepository<ActivityType> actvitytype;
 
         public TrailController()
@@ -27,6 +29,8 @@ namespace BackCountryFreedom.WebUI.Controllers
             distanceScale = new InMemoryRepository<DistanceScale>();
             elevationScale = new InMemoryRepository<ElevationScale>();
             location = new InMemoryRepository<Location>();
+            province = new InMemoryRepository<Province>();
+            country = new InMemoryRepository<Country>();
             actvitytype = new InMemoryRepository<ActivityType>();
         }
 
@@ -46,6 +50,8 @@ namespace BackCountryFreedom.WebUI.Controllers
             viewModel.DistanceScales = distanceScale.Collection();
             viewModel.ElevationScales = elevationScale.Collection();
             viewModel.Locations = location.Collection();
+            viewModel.Provinces = province.Collection();
+            viewModel.Country = country.Collection();
             viewModel.ActivityTypes = actvitytype.Collection();
 
             return View(viewModel);
@@ -89,6 +95,8 @@ namespace BackCountryFreedom.WebUI.Controllers
                 viewModel.DistanceScales = distanceScale.Collection();
                 viewModel.ElevationScales = elevationScale.Collection();
                 viewModel.Locations = location.Collection();
+                viewModel.Provinces = province.Collection();
+                viewModel.Country = country.Collection();
                 viewModel.ActivityTypes = actvitytype.Collection();
 
                 return View(viewModel);
@@ -120,6 +128,8 @@ namespace BackCountryFreedom.WebUI.Controllers
                 trailToEdit.Distance = trail.Distance;
                 trailToEdit.Difficulty = trail.Difficulty;
                 trailToEdit.Location = trail.Location;
+                trailToEdit.Country = trail.Country;
+                trailToEdit.ProvState = trail.ProvState;
 
                 context.Commit();
 
