@@ -63,6 +63,7 @@
     <Compile Include="ViewModels\ObservationManagerViewModel.cs" />
     <Compile Include="ViewModels\TrailListViewModel.cs" />
     <Compile Include="ViewModels\TrailManagerViewModel.cs" />
+    <Compile Include="ViewModels\TrailObservationListViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

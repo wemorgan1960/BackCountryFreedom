@@ -1,0 +1,98 @@
+﻿@model BackCountryFreedom.Core.ViewModels.TrailObservationListViewModel
+
+<div>
+    <h4>Trails with Observations</h4>
+    <hr />
+    <dl class="dl-horizontal"></dl>
+</div>
+<section class="wrapper-md bg-">
+    <div class="container">
+        <div class="row">
+            <!-- Main -->
+            <div class="col-sm-12 col-md-9">
+                <article class="post">
+                    <h2><i class="fa fa-map-marker"></i>@Html.DisplayFor(model => model.Trail.Location) <span class="text-muted">@Html.DisplayFor(model => model.Trail.ProvState)</span></h2>
+                    <p class="lead">@Html.DisplayFor(model => model.Name)</p>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5">
+                            <div class="widget padding-md bg-secondary">
+                                <h3 class="headline">Features:</h3>
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-fw fa-th"></i> <strong>@Html.DisplayNameFor(model => model.Trail.Distance):</strong> @Html.DisplayFor(model => model.Trail.Distance) @Html.DisplayFor(model => model.Trail.DistanceScale)</li>
+                                    <li><i class="fa fa-fw fa-th"></i> <strong>@Html.DisplayNameFor(model => model.Trail.Elevation):</strong> @Html.DisplayFor(model => model.Trail.Elevation) @Html.DisplayFor(model => model.Trail.ElevationScale)</li>
+                                    <li><i class="fa fa-fw fa-th"></i> <strong>@Html.DisplayNameFor(model => model.Trail.Lat):</strong> @Html.DisplayFor(model => model.Trail.Lat)</li>
+                                    <li><i class="fa fa-fw fa-th"></i> <strong>@Html.DisplayNameFor(model => model.Trail.Long):</strong> @Html.DisplayFor(model => model.Trail.Long)</li>
+                                </ul>
+                            </div><!-- /.widget -->
+                        </div><!-- /.col -->
+                        <div class="col-sm-12 col-md-7">
+                            <div class="panel panel-secondary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Description</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <p>@Html.DisplayFor(model => model.Trail.Description)</p>
+                                </div><!-- /.panel-body -->
+                            </div><!-- /.panel -->
+                        </div><!-- /.col -->
+                    </div> <!--- row -->
+                    <section>
+                        <h3 class="panel-body">@Html.DisplayNameFor(model => model.Observations)</h3>
+                        <table class="table">
+                            <tr>
+                                <th>Observation Date</th>
+                                <th>Description</th>
+                                <th>Activity Type</th>
+                                <th>Distance</th>
+                                <th>Distance Scale</th>
+                                <th>Eleveationb</th>
+                            </tr>
+                            @foreach (var item in Model.Observations)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ActivityType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Distance)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DistanceScale)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Elevation)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ElevationScale)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Season)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Hazards)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.WeatherConditions)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Rating)
+                                </td>
+                            </tr>
+                            }
+                        </table>
+                    </section>
+                </article><!-- /.post -->
+            </div><!-- /.col -->
+            <!-- End of main -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section>

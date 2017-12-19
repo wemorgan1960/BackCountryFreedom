@@ -10,7 +10,8 @@ namespace BackCountryFreedom.DataAccess.SQL
 {
     public class DataContext : DbContext
     {
-        public DataContext() : base("DefaultConnection")
+        public DataContext()
+            : base("DefaultConnection")
         {
         }
         public DbSet<Observation> Observations { get; set; }

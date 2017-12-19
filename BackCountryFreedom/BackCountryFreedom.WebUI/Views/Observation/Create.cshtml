@@ -60,7 +60,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Observation.DistanceScale, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model=>model.Observation.DistanceScale, new SelectList(Model.DistanceScales,"DistanceScale","DistanceScale"),new { htmlAttribute = new { @class = "form-control" } })
+                @Html.DropDownListFor(model=>model.Observation.DistanceScale, new SelectList(Model.DistanceScales, "Description", "Description"),new { htmlAttribute = new { @class = "form-control" } })
             </div>
         </div>
 
@@ -75,7 +75,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Observation.ElevationScale, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model=>model.Observation.ElevationScale, new SelectList(Model.ElevationScales,"ElevationScale","ElevationScale"),new { htmlAttribute = new { @class = "form-control" } })
+                @Html.DropDownListFor(model=>model.Observation.ElevationScale, new SelectList(Model.ElevationScales, "Description", "Description"),new { htmlAttribute = new { @class = "form-control" } })
             </div>
         </div>
 
@@ -90,7 +90,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Observation.Season, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model=>model.Observation.Season, new SelectList(Model.Seasons,"Season","Season"),new { htmlAttribute = new { @class = "form-control" } })
+                @Html.DropDownListFor(model=>model.Observation.Season, new SelectList(Model.Seasons, "Description", "Description"),new { htmlAttribute = new { @class = "form-control" } })
             </div>
         </div>
 

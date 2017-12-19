@@ -14,17 +14,17 @@ namespace BackCountryFreedom.DataAccess.SQL
     public class SQLRepository<T> : IRepository<T> where T : BaseEntity
     {
         internal DataContext context;
-        internal DbSet<T> DbSet;
+        internal DbSet<T> dbSet;
 
         public SQLRepository(DataContext context)
         {
             this.context = context;
-            this.DbSet = context.Set<T>();
+            this.dbSet = context.Set<T>();
         }
 
         public IQueryable<T> Collection()
         {
-            return DbSet;
+            return dbSet;
         }
 
         public void Commit()
@@ -36,24 +36,24 @@ namespace BackCountryFreedom.DataAccess.SQL
         {
             var t = Find(Id);
             if (context.Entry(t).State == EntityState.Detached)
-                DbSet.Attach(t);
+                dbSet.Attach(t);
 
-            DbSet.Remove(t);
+            dbSet.Remove(t);
         }
 
         public T Find(string Id)
         {
-            return DbSet.Find(Id);
+            return dbSet.Find(Id);
         }
 
         public void Insert(T t)
         {
-            DbSet.Add(t);
+            dbSet.Add(t);
         }
 
         public void Update(T t)
         {
-            DbSet.Attach(t);
+            dbSet.Attach(t);
             context.Entry(t).State = EntityState.Modified;
         }
     }

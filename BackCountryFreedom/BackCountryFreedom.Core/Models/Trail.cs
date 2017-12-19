@@ -35,6 +35,7 @@ namespace BackCountryFreedom.Core.Models
 
         public virtual ICollection<ActivityType> ActivityTypes { get; set; }
 
+        public virtual ICollection<Observation> Observations { get; set; }
 
         [RegularExpression(@"^(\+|-)?(?:180(?:(?:\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,6})?))$", ErrorMessage = "Decmial Format 15.12345")]
         [Display(Name = "Latitude")]

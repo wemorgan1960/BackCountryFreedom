@@ -1,13 +1,10 @@
 ﻿@model IEnumerable<BackCountryFreedom.Core.Models.Country>
 
 <p>
-    <a href="@Url.Action("Create", "Country", "Create")" class="btn btn-default">Create Activity Type</a>
+    <a href="@Url.Action("Create", "Country", "Create")" class="btn btn-default">Create Country</a>
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CreateAt)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
@@ -16,9 +13,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreateAt)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>

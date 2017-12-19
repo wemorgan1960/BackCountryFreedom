@@ -21,11 +21,13 @@ namespace BackCountryFreedom.WebUI.Controllers
         IRepository<Province> province;
         IRepository<Country> country;
         IRepository<ActivityType> actvitytype;
+        IRepository<Observation> observations;
 
         public TrailController(IRepository<Trail> context, IRepository<Difficulty> difficultyContext,
             IRepository<DistanceScale> distanceScaleContext, IRepository<ElevationScale> elevationScaleContext,
             IRepository<Location> locationContext, IRepository<Province> provinceContext,
-            IRepository<Country> countryContext, IRepository<ActivityType> actvitytypeContext)
+            IRepository<Country> countryContext, IRepository<ActivityType> actvitytypeContext,
+            IRepository<Observation> observationsContext)
         {
             this.context = context;
             difficulty = difficultyContext;
@@ -35,6 +37,7 @@ namespace BackCountryFreedom.WebUI.Controllers
             province = provinceContext;
             country = countryContext;
             actvitytype = actvitytypeContext;
+            observations = observationsContext;
         }
 
         // GET: TrailManager
@@ -78,7 +81,26 @@ namespace BackCountryFreedom.WebUI.Controllers
                 context.Insert(trail);
                 context.Commit();
 
-                return RedirectToAction("Indext");
+                return RedirectToAction("Index");
+            }
+        }
+
+        public ActionResult Details(string Id)
+        {
+            Trail trail = context.Find(Id);
+            if (trail == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                TrailObservationListViewModel viewModel = new TrailObservationListViewModel();
+
+                viewModel.Trail = new Trail();
+                viewModel.Observations =observations.Collection();
+
+
+                return View(viewModel);
             }
         }
 
@@ -105,6 +127,7 @@ namespace BackCountryFreedom.WebUI.Controllers
                 return View(viewModel);
             }
         }
+
         [HttpPost]
         public ActionResult Edit(Trail trail, string Id, HttpPostedFileBase file)
         {

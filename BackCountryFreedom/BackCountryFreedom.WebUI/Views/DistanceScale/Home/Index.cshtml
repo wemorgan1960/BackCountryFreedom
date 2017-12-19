@@ -1,0 +1,104 @@
+﻿@model BackCountryFreedom.Core.ViewModels.TrailListViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<h1> Trails</h1>
+<p>
+    <a href="@Url.Action("Create", "Trail")" class="btn btn-default">Create Trail</a>
+</p>
+<div class="col-md-2">
+    <h4> Filter by Location</h4>
+    <div class="list-group">
+        @Html.ActionLink("All", "Index", null, new { @class = Request["Location"] == null ? "list-group-item active" : "list-group-item" })
+
+        @foreach (var loc in Model.Locations)
+        {
+
+            @Html.ActionLink(loc.Description, "Index", new { Location = loc.Description }, new { @class = Request["Location"] == loc.Description ? "list-group-item" : "list-group-item" })
+        }
+    </div>
+</div>
+<div class="col-md-10">
+    <table class="table">
+        <tr>
+            <th>
+                Trail Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Distance
+            </th>
+            <th>
+                Distance Scale
+            </th>
+            <th>
+                Elevation gain
+            </th>
+            <th>
+                Elevation Scale
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                ProvState
+            </th>
+            <th>
+                Country
+            </th>
+            <th>
+                Difficulty
+            </th>
+            <th>
+                Activity Type
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Trails)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Distance)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DistanceScale)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Elevation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ElevationScale)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProvState)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Difficulty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityType)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", "Trail", new { Id=item.Id })" class="btn btn-default">Details</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div class="col-md-12 clearfix" />

@@ -37,7 +37,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Trail.DistanceScale, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Trail.DistanceScale, new SelectList(Model.DistanceScales, "DistanceScale", "DistanceScale"), new { htmlAttribute = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.Trail.DistanceScale, new SelectList(Model.DistanceScales, "Description", "Description"), new { htmlAttribute = new { @class = "form-control" } })
         </div>
     </div>
 
@@ -52,42 +52,42 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Trail.ElevationScale, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Trail.ElevationScale, new SelectList(Model.ElevationScales, "ElevationScale", "ElevationScale"), new { htmlAttribute = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.Trail.ElevationScale, new SelectList(Model.ElevationScales, "Description", "Description"), new { htmlAttribute = new { @class = "form-control" } })
         </div>
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.Trail.Location, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Trail.Location, new SelectList(Model.Locations, "Location", "Location"), new { htmlAttribute = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.Trail.Location, new SelectList(Model.Locations, "Description", "Description"), new { htmlAttribute = new { @class = "form-control" } })
         </div>
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.Trail.ProvState, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Trail.ProvState, new SelectList(Model.Locations, "Location", "Province"), new { htmlAttribute = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.Trail.ProvState, new SelectList(Model.Provinces, "Description", "Description"), new { htmlAttribute = new { @class = "form-control" } })
         </div>
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.Trail.Country, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Trail.Country, new SelectList(Model.Locations, "Location", "Country"), new { htmlAttribute = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.Trail.Country, new SelectList(Model.Country, "Description", "Description"), new { htmlAttribute = new { @class = "form-control" } })
         </div>
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.Trail.Difficulty, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Trail.Difficulty, new SelectList(Model.Locations, "Difficulty", "Difficulty"), new { htmlAttribute = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.Trail.Difficulty, new SelectList(Model.Difficulties, "Description", "Description"), new { htmlAttribute = new { @class = "form-control" } })
         </div>
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.Trail.ActivityType, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.Trail.ActivityType, new SelectList(Model.ActivityTypes, "ActivityType", "ActivityType"), new { htmlAttribute = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.Trail.ActivityType, new SelectList(Model.ActivityTypes, "Description", "Description"), new { htmlAttribute = new { @class = "form-control" } })
         </div>
     </div>
 
