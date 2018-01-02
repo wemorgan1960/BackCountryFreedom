@@ -1,7 +1,6 @@
 using BackCountryFreedom.Core.Contracts;
 using BackCountryFreedom.Core.Models;
 using BackCountryFreedom.DataAccess.InMemory;
-using BackCountryFreedom.DataAccess.SQL;
 using System;
 
 using Unity;
@@ -46,17 +45,17 @@ namespace BackCountryFreedom.WebUI
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
-            container.RegisterType<IRepository<ActivityType>, SQLRepository<ActivityType>>();
-            container.RegisterType<IRepository<Country>, SQLRepository<Country>>();
-            container.RegisterType<IRepository<Difficulty>, SQLRepository<Difficulty>>();
-            container.RegisterType<IRepository<DistanceScale>, SQLRepository<DistanceScale>>();
-            container.RegisterType<IRepository<ElevationScale>, SQLRepository<ElevationScale>>();
-            container.RegisterType<IRepository<Location>, SQLRepository<Location>>();
-            container.RegisterType<IRepository<Observation>, SQLRepository<Observation>>();
-            container.RegisterType<IRepository<Province>, SQLRepository<Province>>();
-            container.RegisterType<IRepository<Rating>, SQLRepository<Rating>>();
-            container.RegisterType<IRepository<Season>, SQLRepository<Season>>();
-            container.RegisterType<IRepository<Trail>, SQLRepository<Trail>>();
+            container.RegisterType<IRepository<Observation>, InMemoryRepository<Observation>>();
+            container.RegisterType<IRepository<Difficulty>, InMemoryRepository<Difficulty>>();
+            container.RegisterType<IRepository<DistanceScale>, InMemoryRepository<DistanceScale>>();
+            container.RegisterType<IRepository<ElevationScale>, InMemoryRepository<ElevationScale>>();
+            container.RegisterType<IRepository<ActivityType>, InMemoryRepository<ActivityType>>();
+            container.RegisterType<IRepository<File>, InMemoryRepository<File>>();
+            container.RegisterType<IRepository<Location>, InMemoryRepository<Location>>();
+            container.RegisterType<IRepository<Province>, InMemoryRepository<Province>>();
+            container.RegisterType<IRepository<Country>, InMemoryRepository<Country>>();
+            container.RegisterType<IRepository<Season>, InMemoryRepository<Season>>();
+            container.RegisterType<IRepository<Trail>, InMemoryRepository<Trail>>();
         }
     }
 }
